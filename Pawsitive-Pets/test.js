@@ -1,4 +1,0 @@
-nsdfskjdfbskdbfjksdbfsjfsdkjbfdjkfbdskfbsdfjbsfksjbfksd
-sdfkphnsofnsfnsdkfnsdknsdfldkfsdklfnsdklfsdfsdfdssfsdfll
-
-MIGUEL NOMIN LEILA
