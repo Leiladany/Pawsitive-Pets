@@ -7,18 +7,22 @@ const userSchema = new Schema(
       type: String,
       trim: true,
       required: false,
-      unique: true
+      unique: true,
+      validate: [validateUsername,
+      'Please fill a valid username'],
     },
     email: {
       type: String,
       required: true,
       unique: true,
       lowercase: true,
-      trim: true
+      trim: true,
+      validate: [validateEmail,
+      'Please fill a valid email address'],
     },
     password: {
       type: String,
-      required: true
+      required: true,
     }
   },
   {
