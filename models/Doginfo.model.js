@@ -4,9 +4,9 @@ const { Schema, model } = require("mongoose");
 const userSchema = new Schema(
   {
     dogamount: {
-        type: Number,
-        required: true,
-      },
+      type: Number,
+      required: true,
+    },
     dogname: {
       type: String,
       required: true,
