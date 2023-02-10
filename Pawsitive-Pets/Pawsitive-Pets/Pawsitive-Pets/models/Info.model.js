@@ -5,36 +5,38 @@ const userSchema = new Schema(
   {
     petname: {
       type: String,
-      trim: true,
-      required: false,
+      required: true,
       unique: true
     },
     petsort: {
-        type: String,
-        required: true
+      type: [String],
+      required: true
     },
     petbreed: {
-      type: String,
+      type: [String],
       required: true,
       unique: true,
-      lowercase: true,
-      trim: true
     },
     petbirth: {
+      type: Date,
+      required: true,
+      trim: true,
+    },
+    petsex: {
+      type: [String],
+      required: true,
+    },
+    petcolor: {
+      type: [String],
+      required: true,
+    },
+    petvaccines: {
       type: String,
       required: true
     },
-    petcolor: {
-        type: String,
-        required: true
-    },
-    petvaccines: {
-        type: String,
-        required: true
-    },
     petpicture: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
   },
   {
