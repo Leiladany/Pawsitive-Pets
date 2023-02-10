@@ -26,7 +26,7 @@ router.post('/signup', async (req, res) => {
   
       try {
         await User.create(body)
-        res.send(body)
+        res.redirect('/auth/login')
       } catch (error) {
         if (error.code === 11000) {
           console.log('Duplicate !')
