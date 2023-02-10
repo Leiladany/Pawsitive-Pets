@@ -20,7 +20,7 @@ const userSchema = new Schema(
       validate: [validateEmail,
       'Please fill a valid email address'],
     },
-    password: {
+    passwordHash: {
       type: String,
       required: true,
     }
