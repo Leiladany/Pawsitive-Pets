@@ -3,6 +3,10 @@ const { Schema, model } = require("mongoose");
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
 const userSchema = new Schema(
   {
+    petamount: {
+      type: Number,
+      required: true,
+    },
     petname: {
       type: String,
       required: true,
@@ -35,10 +39,17 @@ const userSchema = new Schema(
     pethair: {
       type: [String],
       required: true,
-      enum: ['straight', 'curly', 'waivy', ],
+      enum: ['long hair', 'medium hair', 'short hair', 'no hair',
+      'wavy hair', 'curly hair'],
     },
-    petvaccines: {
+    petvaccinescat: {
       type: [String],
+      type: Date,
+      required: true,
+    },
+    petvaccinesdog: {
+      type: [String],
+      type: Date,
       required: true,
     },
     petpicture: {

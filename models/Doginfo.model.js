@@ -3,6 +3,10 @@ const { Schema, model } = require("mongoose");
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
 const userSchema = new Schema(
   {
+    dogamount: {
+        type: Number,
+        required: true,
+      },
     dogname: {
       type: String,
       required: true,
@@ -30,13 +34,15 @@ const userSchema = new Schema(
     doghair: {
       type: [String],
       required: true,
-      enum: ['long hair', 'medium hair', 'short hair', 'no hair', ],
+      enum: ['long hair', 'medium hair', 'short hair', 'no hair',
+      'wavy hair', 'curly hair'],
     },
     dogvaccines: {
       type: [String],
+      type: Date,
       required: true,
     },
-    dogmedicprocedures: {
+    dogmedicalhistory: {
 
     },
     dogpicture: {
