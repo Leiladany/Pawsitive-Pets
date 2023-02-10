@@ -19,4 +19,3 @@ vaccines
 anti parasite(internal);
 anti parasite(external);
 >>>>>>> refs/remotes/origin/main
-git
