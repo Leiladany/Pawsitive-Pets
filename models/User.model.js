@@ -8,8 +8,6 @@ const userSchema = new Schema(
       trim: true,
       required: false,
       unique: true,
-      validate: [validateUsername,
-      'Please fill a valid username'],
     },
     email: {
       type: String,
@@ -17,8 +15,6 @@ const userSchema = new Schema(
       unique: true,
       lowercase: true,
       trim: true,
-      validate: [validateEmail,
-      'Please fill a valid email address'],
     },
     passwordHash: {
       type: String,
