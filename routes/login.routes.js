@@ -1,3 +1,8 @@
+const express = require('express')
+const bcrypt = require('bcryptjs')
+const User = require('../models/User.model')
+const router = express.Router()
+
 router.get('/login', (req, res) => {
   res.render('auth/login')
 })
@@ -28,3 +33,4 @@ router.post('/login', async (req, res) => {
     // User not found
   }
 })
+module.exports = router
