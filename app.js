@@ -11,6 +11,24 @@ const express = require('express')
 
 const app = express()
 
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+
+app.use(
+  session({
+    secret: process.env.SESSION_KEY,
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+      maxAge: 24 * 60 * 60 * 1000, // in milliseconds
+    },
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/Pawsitive-Pets",
+      ttl: 7 * 24 * 60 * 60, // 1 day => in seconds
+    }),
+  })
+);
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require('./config')(app)
 
@@ -24,8 +42,12 @@ app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`
 const indexRoutes = require('./routes/index.routes')
 app.use('/', indexRoutes)
 const authRoutes = require('./routes/signup.routes')
-app.use('/auth', authRoutes)
-
+app.use('/auth', authRoutes) 
+const loginRoutes = require('./routes/login.routes')
+app.use('/auth', loginRoutes) 
+const profiles = require('./routes/profile.routes')
+app.use('/profile', profiles)
+ 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app)

@@ -1,5 +1,9 @@
 const express = require('express')
+<<<<<<< HEAD
 const bcrypt = require('bcryptjs')
+=======
+const bcrypt = require('bcrypt')
+>>>>>>> main
 const User = require('../models/User.model')
 const router = express.Router()
 
@@ -33,4 +37,8 @@ router.post('/login', async (req, res) => {
     // User not found
   }
 })
+<<<<<<< HEAD
 module.exports = router
+=======
+module.exports = router
+>>>>>>> main

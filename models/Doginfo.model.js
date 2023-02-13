@@ -3,56 +3,49 @@ const { Schema, model } = require("mongoose");
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
 const userSchema = new Schema(
   {
-    petamount: {
+    dogamount: {
       type: Number,
       required: true,
     },
-    petname: {
+    dogname: {
       type: String,
       required: true,
       unique: true
     },
-    petsort: {
-      type: [String],
-      required: true,
-      enum: ['cat', 'dog'],
-    },
-    petbreed: {
+    dogbreed: {
       type: [String],
       required: true,
       unique: true,
     },
-    petbirth: {
+    dogbirth: {
       type: Date,
       required: true,
       trim: true,
     },
-    petsex: {
+    dogsex: {
       type: [String],
       required: true,
       enum: ['male', 'female'],
     },
-    petcolor: {
+    dogcolor: {
       type: [String],
       required: true,
     },
-    pethair: {
+    doghair: {
       type: [String],
       required: true,
       enum: ['long hair', 'medium hair', 'short hair', 'no hair',
       'wavy hair', 'curly hair'],
     },
-    petvaccinescat: {
+    dogvaccines: {
       type: [String],
       type: Date,
       required: true,
     },
-    petvaccinesdog: {
-      type: [String],
-      type: Date,
-      required: true,
+    dogmedicalhistory: {
+
     },
-    petpicture: {
+    dogpicture: {
       type: Image,
       required: true,
     },
