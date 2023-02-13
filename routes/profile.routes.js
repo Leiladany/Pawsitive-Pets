@@ -6,18 +6,25 @@ router.get('/', isLoggedIn, (req, res) => {
     
     res.render('profile', { user: req.session.user })
   })
+
+  router.get('/profile/new', async (req, res, next) => {
+    res.render('/profile', { update: false })
+  })
   
+
+//! Pet.create({...req.body, owner: currentUser._id})
+//!Pet.find({owner: currentUser._id})
+
+
+
+
+
+
+
+
+
+
+
+
+
   module.exports = router 
-
-
-
-/*const express = require('express');
-const router = express.Router();
-
-router.get("/", (req, res, next) => {
-    res.render("profile");
-  });
-
-
-module.exports = router;
-*/
