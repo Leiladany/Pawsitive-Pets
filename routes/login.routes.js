@@ -1,28 +1,36 @@
-router.get ('/login', isLoggedOut, (req, res) => {
-    res.render ('auth/login', { user: undefined })
+const express = require('express')
+const bcrypt = require('bcryptjs')
+const User = require('../models/User.model')
+const router = express.Router()
+
+router.get('/login', (req, res) => {
+  res.render('auth/login')
 })
 
-router.post('/login', isLoggedOut, async (req, res) => {
-    try {
-      const userMatch = await User.find({ username: req.body.username })
-      if (userMatch.length) {
-    
-        const currentUser = userMatch[0]
-        if (bcrypt.compareSync(req.body.password, currentUser.passwordHash)) {
+router.post('/login', async (req, res) => {
+  const body = req.body
 
-          req.session.user = currentUser
-          res.redirect('/auth/profile')
-        } else {
-          
-          res.send('Incorrect password')
-        }
-      } else {
-        
-        res.send('User not found')
+  const userMatch = await User.find({ username: body.username })
+  // console.log(userMatch)
+  if (userMatch.length) {
+    // User found
+    const user = userMatch[0]
+
+    if (bcrypt.compareSync(body.password, user.passwordHash)) {
+      // Correct password
+
+      const tempUser = {
+        username: user.username,
+        email: user.email,
       }
-    } catch (error) {
-      console.log(error)
-    }
-  })
 
-  hello
+      req.session.user = tempUser
+      res.redirect('/profile')
+    } else {
+      // Incorrect password
+    }
+  } else {
+    // User not found
+  }
+})
+module.exports = router
