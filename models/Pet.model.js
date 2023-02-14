@@ -21,7 +21,7 @@ const petSchema = new Schema(
       required: true,
       trim: true,
     },
-    petsex: {
+    petgender: {
       type: [String],
       required: true,
       enum: ['male', 'female'],
@@ -38,11 +38,9 @@ const petSchema = new Schema(
     },
     petvaccines: {
       type: String,
-      required: true,
     },
     petvaccinesdate: {
       type: Date,
-      required: true,
     },
     petpicture: {
       imageUrl: String
