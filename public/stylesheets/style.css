@@ -1,16 +1,71 @@
 body {
+  background-color: #c6e9f7;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+<<<<<<< HEAD
 nav {
   background-color: blueviolet;
 }
 
 a {
   color: #00b7ff;
+=======
+.navbar {
+  background-color: white;
+>>>>>>> Css
 }
 
-h1 {
-  color: 15px;
+.navbar-toggler {
+  border-style: none;
 }
+
+.navbar-collapse {
+  background-color: blue;
+}
+
+.nav-link {
+  color: black;
+}
+
+.logoutPositon {
+padding-left: 70%;
+}
+
+.logoutbutton {
+  border-style: none;
+  background-color: transparent;
+}
+
+.text {
+  top: 70px;
+  position: relative;
+  text-align: center;
+}
+
+.title {
+  padding-bottom: 50px;
+}
+
+.indication {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.signupbutton {
+  font-size: 20px;
+  width: 120px;
+  border-radius: 10px;
+  border: 2px solid #0082b6c4;
+  background-color: white;
+}
+
+.loginbutton {
+  font-size: 20px;
+  width: 120px;
+  border-radius: 10px;
+  border: 2px solid #0082b6c4;
+  background-color: white;
+}
+
