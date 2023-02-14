@@ -38,5 +38,4 @@ router.get('/', isLoggedIn, (req, res) => {
 //? Pet.find({owner: currentUser._id})
 
 
-  module.exports = router 
-asdasdasdasasasdadasdsaasd
+  module.exports = router
