@@ -1,0 +1,9 @@
+<h1>All pets page</h1>
+<% if (!hopper.length) { %> There is nothing in the DB <% } %> <% hopper.forEach(pet => { %>
+<div style="border: 1px solid black; margin: 1rem; padding: 1rem">
+  <h2><%=pet.petname%></h2>
+  <h2><%=pet.petbreed%></h2>
+  <h2><%=pet.petbirth%></h2>
+  <a href="/profile/<%- pet._id %>">Details</a>
+</div>
+<% }) %>
