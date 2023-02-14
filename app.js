@@ -45,8 +45,9 @@ const authRoutes = require('./routes/signup.routes')
 app.use('/auth', authRoutes) 
 const loginRoutes = require('./routes/login.routes')
 app.use('/auth', loginRoutes) 
-const profiles = require('./routes/profile.routes')
-app.use('/profile', profiles)
+const profile = require('./routes/profile.routes')
+app.use('/profile', profile)
+
  
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
