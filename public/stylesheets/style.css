@@ -1,3 +1,5 @@
+/* Main Page */
+
 body {
   background-color: #c6e9f7;
   padding: 50px;
@@ -6,6 +8,7 @@ body {
 
 .navbar {
   background-color: white;
+  height: 90px;
 }
 
 .navbar-toggler {
@@ -14,6 +17,13 @@ body {
 
 .nav-link {
   color: black;
+}
+
+.rounded {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px !important;  /* 50% of your logo width */
+  display: block;
 }
 
 .logoutPositon {
@@ -44,7 +54,7 @@ padding-left: 70%;
   font-size: 20px;
   width: 120px;
   border-radius: 10px;
-  border: 2px solid #0082b6c4;
+  border: 2px solid #efc2e1;
   background-color: white;
 }
 
@@ -52,7 +62,7 @@ padding-left: 70%;
   font-size: 20px;
   width: 120px;
   border-radius: 10px;
-  border: 2px solid #0082b6c4;
+  border: 2px solid #efc2e1;
   background-color: white;
 }
 
