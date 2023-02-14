@@ -7,6 +7,10 @@ router.get('/', isLoggedIn, (req, res) => {
     res.render('profile', { user: req.session.user })
   })
   
+  router.get('/', isLoggedIn, (req, res) => {
+    res.render('profile', { userInSession: req.session.currentUser });
+  });
+
   module.exports = router 
 
 
