@@ -11,6 +11,8 @@ router.get('/', isLoggedIn, (req, res) => {
 
   router.get('/create', async (req, res, next) => {
     const body = req.body
+    console.log(body + "🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶")
+    
     const createPet = await Pet.create({
       ...body,
       petamount: body.petamount,
@@ -24,7 +26,7 @@ router.get('/', isLoggedIn, (req, res) => {
       petvaccines: body.petvaccines
       //missing petpicture
     })
-    res.redirect('/recipes')
+    res.redirect('/')
   })
 
 

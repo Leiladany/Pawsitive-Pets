@@ -17,7 +17,7 @@ const petSchema = new Schema(
       enum: ['cat', 'dog'],
     },
     petbreed: {
-      type: [String],
+      type: String,
       required: true,
     },
     petbirth: {
@@ -48,11 +48,16 @@ const petSchema = new Schema(
     petpicture: {
       imageUrl: String
     },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`    
     timestamps: true
   }
+  
 );
 
 const Pet = model("Pet", petSchema);
