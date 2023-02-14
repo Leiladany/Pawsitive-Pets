@@ -1,7 +1,7 @@
 const express = require('express')
 const { isLoggedIn } = require('../middleware/route-guard')
 const router = express.Router()
-const Info = require('../models/Info.model');
+const Pet = require('../models/Pet.model');
 
 router.get('/', isLoggedIn, (req, res) => {
     
