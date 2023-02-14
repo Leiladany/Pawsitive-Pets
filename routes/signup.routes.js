@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt')
-const User = require('../models/User.model')
-const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard.js');
+const User = require('../models/User.model');
+const { isLoggedOut, isLoggedIn } = require('../middleware/route-guard');
 
 router.get("/", (req, res, next) => {
     res.render("index");
@@ -12,7 +12,7 @@ router.get("/signup", isLoggedOut, (req, res) => {
     res.render("auth/signup");
   });
 
-router.post('/signup', async (req, res) => {
+router.post('/signup', isLoggedIn, async (req, res, next) => {
     const body = { ...req.body }
   
     if (body.password.length < 6) {

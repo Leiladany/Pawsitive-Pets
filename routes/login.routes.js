@@ -1,6 +1,7 @@
 const express = require('express')
 const bcrypt = require('bcrypt')
 const User = require('../models/User.model')
+const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
 const router = express.Router()
 const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard.js');
 
@@ -34,4 +35,11 @@ router.post('/login', async (req, res) => {
     // User not found
   }
 })
+
+router.post('/logout', (req, res, next) => {
+  req.session.destroy(err => {
+    if (err) next(err);
+    res.redirect('/');
+  });
+});
 module.exports = router

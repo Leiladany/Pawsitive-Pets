@@ -1,54 +1,53 @@
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
-const userSchema = new Schema(
+const petSchema = new Schema(
   {
-    catamount: {
+    petamount: {
       type: Number,
-      equired: true,
+      required: true,
     },
-    catname: {
+    petname: {
       type: String,
       required: true,
-      unique: true
     },
-    catbreed: {
+    petsort: {
       type: [String],
       required: true,
-      unique: true,
+      enum: ['cat', 'dog'],
     },
-    catbirth: {
+    petbreed: {
+      type: [String],
+      required: true,
+    },
+    petbirth: {
       type: Date,
       required: true,
       trim: true,
     },
-    catsex: {
+    petsex: {
       type: [String],
       required: true,
       enum: ['male', 'female'],
     },
-    catcolor: {
-      type: [String],
+    petcolor: {
+      type: String,
       required: true,
     },
-    cathair: {
+    pethair: {
       type: [String],
       required: true,
-      enum: ['long hair', 'medium hair', 'short hair', 'no hair', ],
+      enum: ['long hair', 'medium hair', 'short hair', 'no hair',
+      'wavy hair', 'curly hair'],
     },
-    catvaccines: {
-      type: [String],
+    petvaccines: {
+      type: String,
       type: Date,
       required: true,
     },
-    catmedicalhistory: {
-
+    petpicture: {
+      imageUrl: String
     },
-    catpicture: {
-      type: Image,
-      required: true,
-    },
-    
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`    
@@ -56,6 +55,6 @@ const userSchema = new Schema(
   }
 );
 
-const User = model("User", userSchema);
+const Pet = model("Pet", petSchema);
 
-module.exports = User;
+module.exports = Pet;
