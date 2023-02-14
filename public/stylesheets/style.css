@@ -4,6 +4,18 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.navbar {
+  background-color: white;
+}
+
+.navbar-toggler {
+  border-style: none;
+}
+
+.navbar-collapse {
+  background-color: blue;
+}
+
 .nav-link {
   color: black;
 }
