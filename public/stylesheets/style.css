@@ -1,10 +1,11 @@
 body {
+  background-color: #c6e9f7;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-nav {
-  background-color: blueviolet;
+.nav-link {
+  color: black;
 }
 
 .logoutPositon {
@@ -17,21 +18,33 @@ padding-left: 70%;
 }
 
 .text {
-  top: 100px;
+  top: 70px;
   position: relative;
-  border: 3px solid #73AD21;
   text-align: center;
 }
 
+.title {
+  padding-bottom: 50px;
+}
+
 .indication {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-a {
-  color: #00b7ff;
+.signupbutton {
+  font-size: 20px;
+  width: 120px;
+  border-radius: 10px;
+  border: 2px solid #0082b6c4;
+  background-color: white;
 }
 
-h1 {
-  color: 15px;
+.loginbutton {
+  font-size: 20px;
+  width: 120px;
+  border-radius: 10px;
+  border: 2px solid #0082b6c4;
+  background-color: white;
 }
+
