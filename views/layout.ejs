@@ -11,10 +11,20 @@
 
   <body>
     <nav class="navbar sticky-top bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Pawsitive Pets</a>
+      <div class="container-fluid"><img class="logo" src="/public/images/logo.png" alt="" width="100" height="100"/>
+        <a class="navbar-brand"></a>
+
         
           <ul class="navbar-nav">
+
+    <nav class="navbar fixed-top navbar-expand-md">
+      <div class="container-fluid">
+        <a class="navbar-brand">Pawsitive Pets</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/">Home Page</a>
             </li>
@@ -28,11 +38,15 @@
               <a class="nav-link" href="/profile">Profile</a>
             </li>
           </ul>
-          <form id="logout-form" action="/auth/logout" method="POST">
-            <button>Logout</button>
-          </form>
+          <span class="logoutPositon">
+            <form id="logout-form" action="/auth/logout" method="POST">
+              <button class="logoutbutton">Logout</button>
+            </form>
+          </span>
         </div>
+      </div>
     </nav>
+  
     <%- body %>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
