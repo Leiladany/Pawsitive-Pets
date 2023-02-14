@@ -34,13 +34,9 @@ router.get('/', isLoggedIn, (req, res) => {
     res.redirect('/profile')
   })
 
-  router.get('/edit/:id', isLoggedIn, async (req, res) => {
-    const pet = await Pet.findById(req.params.id)
-    res.render('animals/edit', { pet })
-  })
-
 //? Pet.create({...req.body, owner: currentUser._id})
 //? Pet.find({owner: currentUser._id})
 
 
   module.exports = router 
+asdasdasdasasasdadasdsaasd
