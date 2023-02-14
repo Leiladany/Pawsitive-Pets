@@ -16,6 +16,18 @@ padding-left: 70%;
   background-color: transparent;
 }
 
+.text {
+  top: 100px;
+  position: relative;
+  border: 3px solid #73AD21;
+  text-align: center;
+}
+
+.indication {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 a {
   color: #00b7ff;
 }
