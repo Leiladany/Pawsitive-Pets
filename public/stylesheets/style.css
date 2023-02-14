@@ -7,6 +7,15 @@ nav {
   background-color: blueviolet;
 }
 
+.logoutPositon {
+padding-left: 70%;
+}
+
+.logoutbutton {
+  border-style: none;
+  background-color: transparent;
+}
+
 a {
   color: #00b7ff;
 }
