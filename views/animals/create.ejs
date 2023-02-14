@@ -1,0 +1,42 @@
+<form method="POST" action="/profile/Create">
+    <label>
+      Pet Amount:
+      <input type="number" name="title" value="<%{ Dog.petamount }%>" />
+    </label>
+    <label>
+      Pet Name:
+      <input type="text" name="petname" value="<%{Dog.petname}%>" />
+    </label>
+    <label>
+        Cat or Doggo?
+        <select name="petsort">
+            <option value="cat" <% recipe.difficulty === 'easy' { %>
+                selected
+               <% } %>>Easy</option>
+          <option value="medium" <% if (recipe.difficulty === 'medium') { %>
+            selected
+           <% } %>>Medium</option>
+          <option value="hard" <% if (recipe.difficulty === 'hard') { %>
+            selected
+           <% } %>>Hard</option>
+           <% } else { %>
+            <option value="easy">Easy</option>
+             <option value="medium" selected>Medium</option>
+             <option value="hard">Hard</option>
+          <% } %>
+        </select>
+      </label>
+      <label>
+        Breed:
+        <input type="text" name="petbreed" value="<%{Dog.petbreed}%>" />
+      </label>
+      <label>
+        Pet birthday:
+        <input type="date" name="petbirth" value="<%{Dog.petbirth}%>" />
+      </label>
+      <label>
+        Pet gender:
+        <select type="text" name="petname" value="<%{Dog.petname}%>" />
+      </label>
+    <button type="submit">Let's go!</button>
+  </form>
