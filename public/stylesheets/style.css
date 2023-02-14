@@ -4,17 +4,8 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-<<<<<<< HEAD
-nav {
-  background-color: blueviolet;
-}
-
-a {
-  color: #00b7ff;
-=======
 .navbar {
   background-color: white;
->>>>>>> Css
 }
 
 .navbar-toggler {
