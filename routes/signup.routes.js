@@ -25,8 +25,14 @@ router.post('/signup', async (req, res) => {
       body.passwordHash = passwordHash
   
       try {
-        await User.create(body)
-        res.redirect('/auth/login')
+        const user = await User.create(body)
+        const tempUser = {
+          username: user.username,
+          email: user.email,
+        }
+
+        req.session.user = tempUser
+        res.redirect('/profile')
       } catch (error) {
         if (error.code === 11000) {
           console.log('Duplicate !')
@@ -43,5 +49,7 @@ router.post('/signup', async (req, res) => {
       }
     }
   });
+
+
   
   module.exports = router;
