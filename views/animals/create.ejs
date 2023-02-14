@@ -1,69 +1,65 @@
-<form method="POST" action="/profile/Create">
+<form method="POST" action="/profile/create">
     <label>
       Pet Amount:
-      <input type="number" name="title" value="<%{ Dog.petamount }%>" />
+      <input type="number" name="title"/>
     </label>
     <label>
       Pet Name:
-      <input type="text" name="petname" value="<%{Dog.petname}%>" />
+      <input type="text" name="petname"/>
     </label>
     <label>
         Cat or Doggo?
         <select name="petsort">
-            <option value="cat" <% pet.petsort === 'cat' { %>
-                selected
-               <% } %>>cat</option>
-               <option value="dog" <% pet.petsort === 'dog' { %>
-                selected
-               <% } %>>Dogo</option>
+            <option value="cat"
+                selected>cat</option>
+               <option value="dog" 
+                selected>Dogo</option>
         </select>
       </label>
       <label>
         Breed:
-        <input type="text" name="petbreed" value="<%{pet.petbreed}%>" />
+        <input type="text" name="petbreed"/>
       </label>
       <label>
         Pet birthday:
-        <input type="date" name="petbirth" value="<%{pet.petbirth}%>" />
+        <input type="date" name="petbirth"/>
       </label>
       <label>
         Pet gender:
-        <select type="text" name="petname" value="<%{pet.petname}%>" />
+        <select name="petgender">
+            <option value="male" 
+                selected>Male</option>
+            <option value="female"
+                selected>Female</option>
+        </select>
       </label>
       <label>
         Pet color:
-        <input type="text" name="petcolor" value="<%{pet.petcolor}%>" />
-      </label>
-      <label>
-        Pet birthday:
-        <input type="date" name="petbirth" value="<%{Dog.petbirth}%>" />
+        <input type="text" name="petcolor" value="" />
       </label>
       <label>
         Type of hair:
         <select name="pethair">
-            <option value="long hair" <% pet.pethair === 'long hair' { %>
-                selected
-               <% } %>>Long Hair</option>
-               <option value="medium hair" <% pet.pethair === 'meidum hair' { %>
-                selected
-               <% } %>>Medium Hair</option>
-               <option value="shor hair" <% pet.pethair === 'short hair' { %>
-                selected
-               <% } %>>Short Hair</option>
-               <option value="no hair" <% pet.pethair === 'no hair' { %>
-                selected
-               <% } %>>No Hair</option>
-               <option value="wavy hair" <% pet.pethair === 'wavy hair' { %>
-                selected
-               <% } %>>Wavy Hair</option>
-               <option value="curly hair" <% pet.pethair === 'curly hair' { %>
-                selected
-               <% } %>>Curly Hair</option>
+            <option value="long hair" 
+                selected>Long Hair</option>
+               <option value="medium hair"
+                selected>Medium Hair</option>
+               <option value="shor hair" 
+                selected>Short Hair</option>
+               <option value="no hair" 
+                selected>No Hair</option>
+               <option value="wavy hair"
+                selected>Wavy Hair</option>
+               <option value="curly hair">Curly Hair</option>
         </select>
       </label>
       <label>
         Pet Vaccines:
-        <input type="text, date" name="petvaccines" value="<%{pet.petvaccines}%>" />
+        <input type="text" name="petvaccines">
+      </label>
+      <label>
+        Pet Vaccines:
+        <input type="date" name="petvaccinesdate">
       </label>
       //missing pet pictures
       <label>
