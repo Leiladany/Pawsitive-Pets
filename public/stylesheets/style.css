@@ -56,3 +56,24 @@ padding-left: 70%;
   background-color: white;
 }
 
+.title2 {
+  padding-bottom: 120px;
+}
+
+.form {
+  position: relative;
+  left: 65px;
+}
+
+.button2 {
+  right: 440px;
+  top: 120px;
+  position: relative;
+  font-size: 20px;
+  width: 120px;
+  border-radius: 10px;
+  border: 2px solid #0082b6c4;
+  background-color: white;
+}
+
+
