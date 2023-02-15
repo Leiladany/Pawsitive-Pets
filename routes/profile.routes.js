@@ -41,12 +41,6 @@ router.get('/', isLoggedIn, (req, res) => {
     }
   })
 
-  router.get('/:recipeId', async (req, res) => {
-    const recipeFound = await Recipe.findById(req.params.recipeId).populate('owner')
-    console.log({ recipeFound })
-    res.render('recipes/one', { recipeFound })
-  })
-
 
   
 //? Pet.find({owner: currentUser._id})
