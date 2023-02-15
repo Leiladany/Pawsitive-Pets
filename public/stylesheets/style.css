@@ -23,6 +23,11 @@ body {
   padding: 5px;
 }
 
+.loginbutton {
+  border-style: none;
+  background-color: transparent;
+}
+
 .logoutbutton {
   border-style: none;
   background-color: transparent;
@@ -33,7 +38,6 @@ body {
   position: relative;
   text-align: center;
 }
-
 
 .titlePaw {
   text-align: left;
@@ -49,7 +53,6 @@ body {
   font-family: fantasy;
   margin-top: 20px;
   margin-right: 120px;
-  
 }
 
 .indication {
@@ -76,12 +79,6 @@ body {
   border: 2px solid white;
   background-color: #efc2e1;
   box-shadow: 0 10px 14px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.loginbutton {
-  border-style: none;
-  background-color: transparent;
-  display: inline;
 }
 
 .title {
