@@ -26,6 +26,7 @@ body {
 .logoutbutton {
   border-style: none;
   background-color: transparent;
+  display: inline;
 }
 
 .text {
@@ -63,7 +64,7 @@ body {
   height: 50px;
   border-radius: 10px;
   border: 2px solid white;
-  background-color: #efc2e1;
+  background-color: hsl(319, 58%, 85%);
 }
 
 .signupbutton:hover {
@@ -80,6 +81,7 @@ body {
 .loginbutton {
   border-style: none;
   background-color: transparent;
+  display: inline;
 }
 
 .title {
@@ -90,6 +92,12 @@ body {
   position: relative;
   left: 65px;
 }
+
+.borderimg.png {
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url(borderimg.png) 30 stretch;
+  }
 
 
 /* Image Home Page */
@@ -104,7 +112,6 @@ body {
   position: absolute;
   margin-top: 100px;
   margin-left: 430px;
-  overflow: hidden;
 }
 
 .catImg {
