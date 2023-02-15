@@ -35,14 +35,20 @@ router.get('/', isLoggedIn, (req, res) => {
   router.get('/mypets', async (req, res) => {
     try {
       const allPets = await Pet.find()
-      res.render('animals/mypets', { hopper: allPets })
+      res.render('animals/mypets', { find: allPets })
     } catch (error) {
       console.log('Route to all recipes', error)
     }
   })
-  
 
-//? Pet.create({...req.body, owner: currentUser._id})
+  router.get('/:recipeId', async (req, res) => {
+    const recipeFound = await Recipe.findById(req.params.recipeId).populate('owner')
+    console.log({ recipeFound })
+    res.render('recipes/one', { recipeFound })
+  })
+
+
+  
 //? Pet.find({owner: currentUser._id})
 
 
