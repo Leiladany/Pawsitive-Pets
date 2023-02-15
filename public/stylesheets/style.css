@@ -39,27 +39,6 @@ body {
   text-align: center;
 }
 
-.titlePaw {
-  text-align: left;
-  font-size: 135px;
-  font-family: fantasy;
-  margin-top: 100px;
-  margin-left: 200px;
-}
-
-.titleSitive {
-  text-align: right;
-  font-size: 130px;
-  font-family: fantasy;
-  margin-top: 20px;
-  margin-right: 120px;
-}
-
-.indication {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
 .signupbutton {
   position:relative;
   font-size: 20px;
@@ -96,6 +75,34 @@ body {
     border-image: url(borderimg.png) 30 stretch;
   }
 
+.homePagetop {
+  display: flex;
+  justify-content: center;
+  margin-top: 130px;
+}
+
+.titlePaw {
+  font-size: 135px;
+  font-family: fantasy;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.titleSitive {
+  font-size: 130px;
+  font-family: fantasy;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: -40px;
+}
+
+.homePagebottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 160px;
+}
 
 /* Image Home Page */
 .imglogo {
@@ -104,21 +111,26 @@ body {
 }
 
 .dogImg {
-  position: absolute;
-  margin-top: 100px;
-  margin-left: 430px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .catImg {
-  position: absolute;
-  margin-top: 400px;
-  margin-left: 760px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .pupImg {
-  position: absolute;
-  margin-top: 365px;
-  margin-left: 140px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
 }
 
 
