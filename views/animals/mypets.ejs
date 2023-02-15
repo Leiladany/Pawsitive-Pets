@@ -1,14 +1,24 @@
 <h1>My pets:</h1>
-<% if (!find.length) { %> There is nothing in the DB <% } %> <% find.forEach(pet => { %>
+<% if (!mypets.length) { %> There is nothing in the DB <% } %> <% mypets.forEach(pet => { %>
 <div style="border: 1px solid black; margin: 1rem; padding: 1rem">
-  <h2>My name is: <%=pet.petname%></h2>
+  <h2>My name is <%=pet.petname%></h2>
   <h2>I'm a <%=pet.petsort%></h2>
   <h2>I'm a <%=pet.petbreed%></h2>
   <h2>My birth is on the: <%=pet.petbirth%></h2>
-  <h2>My gender is: <%=pet.petsex%></h2>
+  <h2>My gender is: <%=pet.petgender%></h2>
   <h2>My color is: <%=pet.petcolor%></h2>
   <h2>My hair type is: <%=pet.pethair%></h2>
   <h2>My next vaccine is: <%=pet.petvaccines%></h2>
   <h2>and the date is: <%=pet.petvaccinesdate%></h2>
 </div>
+<form method="GET" action="/profile/<%- pet._id %>/details">
+  <button type="submit">Pet details</button>
+</form>
+<form method="GET" action="/profile/<%- pet._id %>/edit">
+  <button type="submit">Edit</button>
+</form>
+<form method="POST" action="/profile/<%- pet._id %>/delete">
+  <button type="submit">Delete</button>
+</form>
 <% }) %>
+

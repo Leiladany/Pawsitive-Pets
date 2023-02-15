@@ -8,11 +8,11 @@ router.get("/", (req, res, next) => {
     res.render("index");
   });
 
-router.get("/signup", isLoggedOut, (req, res) => {
+router.get("/signup", (req, res) => {
     res.render("auth/signup");
   });
 
-router.post('/signup', isLoggedIn, async (req, res, next) => {
+router.post('/signup', async (req, res, next) => {
     const body = { ...req.body }
   
     if (body.password.length < 6) {
@@ -28,6 +28,7 @@ router.post('/signup', isLoggedIn, async (req, res, next) => {
       try {
         const user = await User.create(body)
         const tempUser = {
+          id: user.id,
           username: user.username,
           email: user.email,
         }
