@@ -21,10 +21,10 @@ router.post('/login', async (req, res) => {
       // Correct password
 
       const tempUser = {
+        id: user.id,
         username: user.username,
         email: user.email,
       }
-
       req.session.user = tempUser
       res.redirect('/profile')
     } else {

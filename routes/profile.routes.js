@@ -9,6 +9,8 @@ router.get('/', isLoggedIn, (req, res) => {
     res.render('profile', { user: req.session.user })
   })
 
+
+
   router.get('/addpet', (req, res) => {
     res.render('animals/addpet')
 
@@ -17,6 +19,7 @@ router.get('/', isLoggedIn, (req, res) => {
   router.post('/addpet', async (req, res, next) => {
     const body = req.body    
     const createPet = await Pet.create({
+      owner: req.session.user.id,
       petname: body.petname,
       petsort: body.petsort,
       petbreed: body.petbreed,
@@ -34,22 +37,33 @@ router.get('/', isLoggedIn, (req, res) => {
 
   router.get('/mypets', async (req, res) => {
     try {
-      const allPets = await Pet.find()
-      res.render('animals/mypets', { hopper: allPets })
+      console.log(req.session.user)
+      const allPets = await Pet.find({owner: req.session.user.id})
+
+      res.render('animals/mypets', { mypets: allPets })
     } catch (error) {
-      console.log('Route to all recipes', error)
+      console.log('Route to all pets', error)
     }
   })
 
-  router.get('/:mypetsId', async (req, res) => {
-    const petFound = await Pet.findById(req.params.petId).populate('owner')
-    console.log({ petFound })
-    res.render('pets/one', { petFound })
+  router.get('/:mypetsId/details', async (req, res) => {
+    const petFound = await Pet.findById(req.params.mypetsId).populate('owner')
+    res.render('animals/one', { petFound })
   })
+
+  router.get('/:mypetsId/edit', async (req, res) => {
+    const petFound = await Pet.findById(req.params.mypetsId).populate('owner')
+    res.render('animals/updatePet', { petFound })
+  })
+
+  router.post('/:mypetsId/delete', async (req, res) => {
+    await Pet.findByIdAndDelete(req.params.mypetsId)
+    res.redirect('/profile/mypets')
+  })
+
+  
   
 
-//? Pet.create({...req.body, owner: currentUser._id})
-//? Pet.find({owner: currentUser._id})
 
 
   module.exports = router
