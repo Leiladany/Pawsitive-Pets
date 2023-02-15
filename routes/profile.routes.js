@@ -4,6 +4,9 @@ const router = express.Router()
 const Pet = require('../models/Pet.model')
 const User = require('../models/User.model')
 
+// require fileUploader in order to use it 
+const fileUploader = require('../config/cloudinary.config');
+
 
 router.get('/', isLoggedIn, (req, res) => {
     res.render('profile', { user: req.session.user })
@@ -16,8 +19,9 @@ router.get('/', isLoggedIn, (req, res) => {
 
   })
 //create a new pet
-  router.post('/addpet', async (req, res, next) => {
-    const body = req.body    
+  router.post('/addpet', fileUploader.single('movie-cover-image'), async (req, res, next) => {
+    const body = req.body 
+    console.log(req.file)   
     const createPet = await Pet.create({
       owner: req.session.user.id,
       petname: body.petname,
@@ -28,7 +32,8 @@ router.get('/', isLoggedIn, (req, res) => {
       petcolor: body.petcolor,
       pethair: body.pethair,
       petvaccines: body.petvaccines,
-      petvaccinesdate: body.petvaccinesdate
+      petvaccinesdate: body.petvaccinesdate,
+      petpicture: req.file.path
 
       //missing petpicture
     })
@@ -58,21 +63,26 @@ router.get('/', isLoggedIn, (req, res) => {
     res.render('animals/updatePet', { petFound })
   })
 
-
-  router.post('/:mypetsId/edit', async (req, res) => {
+  router.post('/:mypetsId/edit', fileUploader.single('movie-cover-image'), async (req, res) => {
+    if (req.file){
+      const newPet = {...req.body,
+      petpicture: req.file.path,
+    }
+    await Pet.findByIdAndUpdate(req.params.mypetsId, newPet)
+    res.redirect(`/profile/${req.params.mypetsId}/details`)
+    
+    }else{
     const petFound = await Pet.findByIdAndUpdate(req.params.mypetsId,req.body)
     res.redirect(`/profile/${req.params.mypetsId}/details`)
-
+    }
   })
+
+
+
 
   router.post('/:mypetsId/delete', async (req, res) => {
     await Pet.findByIdAndDelete(req.params.mypetsId)
     res.redirect('/profile/mypets')
   })
-
   
-  
-
-
-
   module.exports = router
