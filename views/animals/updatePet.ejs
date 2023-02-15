@@ -1,4 +1,4 @@
-<form method="POST" action="/profile/<%= petFound._id %>/edit">
+<form method="POST" action="/profile/<%= petFound._id %>/edit" enctype="multipart/form-data">
     Pet Name:
     <input type="text" name="petname" value="<%= petFound.petname%>"/>
   </label>
@@ -56,7 +56,10 @@
       Vaccine Date:
       <input type="date" name="petvaccinesdate" value="<%= petFound.petvaccinesdate%>"/>
     </label>
-    //missing pet pictures
+    <label>Image:
+      <input type="file" name="movie-cover-image" class="form-control-file" />
+    </label>
     <label>
   <button type="submit">Update pet 🐶😺</button>
 </form>
+<a href="/profile/mypets">Go back to My Pets</a>

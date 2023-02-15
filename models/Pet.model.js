@@ -43,7 +43,7 @@ const petSchema = new Schema(
       type: Date,
     },
     petpicture: {
-      imageUrl: String
+      type: String
     },
     owner: {
       type: Schema.Types.ObjectId,
