@@ -46,14 +46,23 @@ router.get('/', isLoggedIn, (req, res) => {
     }
   })
 
+  // show 1 pet
   router.get('/:mypetsId/details', async (req, res) => {
-    const petFound = await Pet.findById(req.params.mypetsId).populate('owner')
+    const petFound = await Pet.findById(req.params.mypetsId)
     res.render('animals/one', { petFound })
   })
 
+  //  show pet & edit
   router.get('/:mypetsId/edit', async (req, res) => {
     const petFound = await Pet.findById(req.params.mypetsId).populate('owner')
     res.render('animals/updatePet', { petFound })
+  })
+
+
+  router.post('/:mypetsId/edit', async (req, res) => {
+    const petFound = await Pet.findByIdAndUpdate(req.params.mypetsId,req.body)
+    res.redirect(`/profile/${req.params.mypetsId}/details`)
+
   })
 
   router.post('/:mypetsId/delete', async (req, res) => {
