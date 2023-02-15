@@ -1,11 +1,14 @@
+/* Main Page */
+
 body {
   background-color: #c6e9f7;
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 .navbar {
   background-color: white;
+  height: 80px;
 }
 
 .navbar-toggler {
@@ -16,23 +19,37 @@ body {
   color: black;
 }
 
-.logoutPositon {
-padding-left: 70%;
+.nav-item {
+  padding: 5px;
 }
 
 .logoutbutton {
   border-style: none;
   background-color: transparent;
+  display: inline;
 }
 
 .text {
-  top: 70px;
   position: relative;
   text-align: center;
 }
 
-.title {
-  padding-bottom: 50px;
+
+.titlePaw {
+  text-align: left;
+  font-size: 135px;
+  font-family: fantasy;
+  margin-top: 100px;
+  margin-left: 200px;
+}
+
+.titleSitive {
+  text-align: right;
+  font-size: 130px;
+  font-family: fantasy;
+  margin-top: 20px;
+  margin-right: 120px;
+  
 }
 
 .indication {
@@ -41,22 +58,33 @@ padding-left: 70%;
 }
 
 .signupbutton {
+  position:relative;
   font-size: 20px;
-  width: 120px;
+  width: 160px;
+  height: 50px;
   border-radius: 10px;
-  border: 2px solid #0082b6c4;
-  background-color: white;
+  border: 2px solid white;
+  background-color: hsl(319, 58%, 85%);
+}
+
+.signupbutton:hover {
+  position:relative;
+  font-size: 20px;
+  width: 160px;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid white;
+  background-color: #efc2e1;
+  box-shadow: 0 10px 14px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .loginbutton {
-  font-size: 20px;
-  width: 120px;
-  border-radius: 10px;
-  border: 2px solid #0082b6c4;
-  background-color: white;
+  border-style: none;
+  background-color: transparent;
+  display: inline;
 }
 
-.title2 {
+.title {
   padding-bottom: 120px;
 }
 
@@ -64,6 +92,42 @@ padding-left: 70%;
   position: relative;
   left: 65px;
 }
+
+.borderimg.png {
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url(borderimg.png) 30 stretch;
+  }
+
+
+/* Image Home Page */
+.rounded {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px !important;  /* 50% of your logo width */
+  display: block;
+}
+
+.dogImg {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 430px;
+}
+
+.catImg {
+  position: absolute;
+  margin-top: 400px;
+  margin-left: 760px;
+}
+
+.pupImg {
+  position: absolute;
+  margin-top: 365px;
+  margin-left: 140px;
+}
+
+
+/* Sign up Page */
 
 .button2 {
   right: 440px;
@@ -76,6 +140,9 @@ padding-left: 70%;
   background-color: white;
 }
 
+
+/* Login in Page */
+
 .button3 {
   right: 325px;
   top: 120px;
@@ -86,4 +153,3 @@ padding-left: 70%;
   border: 2px solid #0082b6c4;
   background-color: white;
 }
-
