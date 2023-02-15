@@ -2,13 +2,13 @@
 
 body {
   background-color: #c6e9f7;
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 .navbar {
   background-color: white;
-  height: 90px;
+  height: 80px;
 }
 
 .navbar-toggler {
@@ -19,30 +19,37 @@ body {
   color: black;
 }
 
-.rounded {
-  position: absolute;
-  left: 50%;
-  margin-left: -50px !important;  /* 50% of your logo width */
-  display: block;
-}
-
-.logoutPositon {
-padding-left: 70%;
+.nav-item {
+  padding: 10px;
 }
 
 .logoutbutton {
   border-style: none;
   background-color: transparent;
+  
 }
 
 .text {
-  top: 70px;
   position: relative;
   text-align: center;
 }
 
-.title {
-  padding-bottom: 50px;
+
+.titlePaw {
+  text-align: left;
+  font-size: 135px;
+  font-family: fantasy;
+  margin-top: 85px;
+  margin-left: 200px;
+}
+
+.titleSitive {
+  text-align: right;
+  font-size: 130px;
+  font-family: fantasy;
+  margin-top: 20px;
+  margin-right: 120px;
+  
 }
 
 .indication {
@@ -51,22 +58,26 @@ padding-left: 70%;
 }
 
 .signupbutton {
-  font-size: 20px;
-  width: 120px;
+  position:relative;
+  font-size: 17px;
+  width: 150px;
+  height: 40px;
   border-radius: 10px;
-  border: 2px solid #efc2e1;
-  background-color: white;
+  border: 2px solid white;
+  background-color: #efc2e1;
 }
 
 .loginbutton {
-  font-size: 20px;
-  width: 120px;
+  position:relative;
+  font-size: 17px;
+  width: 150px;
+  height: 40px;
   border-radius: 10px;
-  border: 2px solid #efc2e1;
-  background-color: white;
+  border: 2px solid white;
+  background-color: #efc2e1;
 }
 
-.title2 {
+.title {
   padding-bottom: 120px;
 }
 
@@ -74,6 +85,33 @@ padding-left: 70%;
   position: relative;
   left: 65px;
 }
+
+
+/* Image Home Page */
+.rounded {
+  position: fixed;
+}
+
+.dogImg {
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 430px;
+}
+
+.catImg {
+  position: absolute;
+  margin-top: 390px;
+  margin-left: 760px;
+}
+
+.pupImg {
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 140px;
+}
+
+
+/* Sign up Page */
 
 .button2 {
   right: 440px;
@@ -86,6 +124,9 @@ padding-left: 70%;
   background-color: white;
 }
 
+
+/* Login in Page */
+
 .button3 {
   right: 325px;
   top: 120px;
@@ -96,4 +137,3 @@ padding-left: 70%;
   border: 2px solid #0082b6c4;
   background-color: white;
 }
-
