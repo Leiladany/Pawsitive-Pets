@@ -13,28 +13,28 @@
           
     <nav class="navbar fixed-top navbar-expand-md">
       <div class="container-fluid">
-        <a class="navbar-brand"><img src="/images/logo2.png" alt="Logo" width="100" height="100" class="imglogo d-inline-block align-text-top"></a>
+        <a class="navbar-brand"><img src="/images/logonew.png" class='logonew' alt="Logo" width="130" height="40"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         
-        <div class="collapse navbar-collapse" id="navbarText">
-          
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse" class="navbarText">
+          <ul class="nav justify-content-center">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home Page</a>
+              <a class="nav-link" aria-current="page" href="/"><div class="navText">
+              Home <img src="/images/borderimg.png" class="navImg"></div></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/auth/signup">Signup</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/auth/login">Login</a>
+              <a class="nav-link" href="/">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/profile">Profile</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/auth/login">Login</a>
+            </li>
           </ul>
-          <span class="logoutPositon">
+          <span class="logoutPosition">
             <form id="logout-form" action="/auth/logout" method="POST">
               <button class="logoutbutton">Logout</button>
             </form>
