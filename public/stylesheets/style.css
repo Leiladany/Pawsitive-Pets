@@ -34,11 +34,6 @@ body {
   display: inline;
 }
 
-.text {
-  position: relative;
-  text-align: center;
-}
-
 .signupbutton {
   position:relative;
   font-size: 20px;
@@ -133,11 +128,21 @@ body {
   margin-top: 30px;
 }
 
+/* Sign up Page and login */
+
+.container {
+  position: relative;
+  top: 90px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 90px;
+  width: 40%;
+}
 
 /* Sign up Page */
 
 .formsignup {
-  margin-top: 100px;
+  text-align: center;
 }
 
 .button2 {
