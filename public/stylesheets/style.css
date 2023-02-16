@@ -1,7 +1,7 @@
 /* Main Page */
 
 body {
-  background-color: #c6e9f7;
+  background-color: #EBF8FF;
   padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -56,7 +56,11 @@ body {
 }
 
 .title {
-  padding-bottom: 120px;
+  display: flex;
+}
+
+.h1 {
+ font-size: 30px;
 }
 
 .form {
@@ -70,12 +74,8 @@ body {
     border-image: url(borderimg.png) 30 stretch;
   }
 
-.homePagetop {
-  display: flex;
-  justify-content: center;
-  margin-top: 130px;
-}
 
+/*
 .titlePaw {
   font-size: 135px;
   font-family: fantasy;
@@ -92,12 +92,7 @@ body {
   align-items: flex-end;
   margin-bottom: -40px;
 }
-
-.homePagebottom {
-  display: flex;
-  justify-content: center;
-  margin-top: 160px;
-}
+*/
 
 /* Image Home Page */
 .logonew {
@@ -105,28 +100,13 @@ body {
   margin-right: 30px;
 }
 
-.dogImg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  padding-left: 25px;
-  padding-right: 25px;
-}
-
-.catImg {
+.homePageImg {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  margin-top: 30px;
+  margin-top: 70px;
+  margin-right: 100px;
 }
 
-.pupImg {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 30px;
-}
 
 /* Sign up Page and login */
 
