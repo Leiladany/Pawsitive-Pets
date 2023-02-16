@@ -1,17 +1,8 @@
-<div class="text">
-    <form class="formlogin" method="POST" action="/auth/login">
-        <div class="mb-3">
-          <label for="disabledTextInput" class="form-label"><p>Username</p>
-          <input type="text" class="form-control" placeholder="Username"/></label>
-        </div>
-        <div class="mb-3">
-          <label for="disabledTextInput" class="form-label"><p>Password</p>
-          <input type="password" class="form-control" placeholder="Password"/></label>
-        </div>
-        <button class="button3" type="submit">LogIn</button>
+<div class="container">
+  <h1 class="title2">Login</h1>
+  <form class="form" method="POST" action="/auth/login" class="vstack gap-3">
+      <label>Username: <input type="text" name="username" /></label>
+      <label>Password: <input type="password" name="password" /></label>
+      <button class="button3" type="submit" class="btn btn-secondary">LogIn</button>
     </form>
-    <% if (typeof errorMessage !== 'undefined') { %>
-    <p style="color: red"><%= errorMessage %></p>
-    <% } %>
-    <style> img { display: none; } </style>
     </div>
