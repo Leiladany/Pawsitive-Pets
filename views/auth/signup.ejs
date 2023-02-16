@@ -1,17 +1,24 @@
-<div class="container">
-  <form class="form" method="POST" action="/auth/signup">
+<div class="formbgimg">
+<div class="formsize">
+  <form class="formsignup" method="POST" action="/auth/signup">
+    <p>Create Your Account</p>
     <label
-      >Username: <input type="text" name="username" <% if (typeof errorMessage !== 'undefined') { %>
+      >Username <input class="input" type="text" name="username" <% if (typeof errorMessage !== 'undefined') { %>
       value="<%= userData.username %>" <% } %> /></label
     >
     <label
-      >Email: <input type="text" name="email" required <% if (typeof errorMessage !== 'undefined') {
+      >Email <input class="input" type="text" name="email" required <% if (typeof errorMessage !== 'undefined') {
       %> value="<%= user.email %>" <% } %> /></label
     >
-    <label>Password: <input type="password" name="password" required /></label>
+    <label>Password <input class="input" type="password" name="password" required /></label>
     <button class="button2" type="submit">SignUp</button>
   </form>
   <% if (typeof errorMessage !== 'undefined') { %>
   <p style="color: red"><%= errorMessage %></p>
   <% } %>
   </div>
+</div>
+
+<img src="../images/miguel.png" class="miguel">
+<img src="../images/nomin.png" class="nomin">
+<img src="../images/leila.png" class="leila">
