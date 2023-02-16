@@ -1,23 +1,17 @@
-<div class="text">
-<form class="formsignup" method="POST" action="/auth/signup">
-    <div class="mb-3">
-      <label for="disabledTextInput" class="form-label"><p>Username</p>
-      <input type="text" class="form-control" placeholder="Username" <% if (typeof errorMessage !== 'undefined') { %>
-        value="<%= userData.username %>" <% } %> ></label>
-    </div>
-    <div class="mb-3">
-      <label for="disabledTextInput" class="form-label"><p>Email</p>
-      <input type="text" class="form-control" placeholder="Email" <% if (typeof errorMessage !== 'undefined') { %>
-        value="<%= user.email %>" <% } %> ></label>
-    </div>
-    <div class="mb-3">
-      <label for="disabledTextInput" class="form-label"><p>Password</p>
-      <input type="password" class="form-control" placeholder="Password" required/></label>
-    </div>
+<div class="container">
+  <form class="form" method="POST" action="/auth/signup">
+    <label
+      >Username: <input type="text" name="username" <% if (typeof errorMessage !== 'undefined') { %>
+      value="<%= userData.username %>" <% } %> /></label
+    >
+    <label
+      >Email: <input type="text" name="email" required <% if (typeof errorMessage !== 'undefined') {
+      %> value="<%= user.email %>" <% } %> /></label
+    >
+    <label>Password: <input type="password" name="password" required /></label>
     <button class="button2" type="submit">SignUp</button>
-</form>
-<% if (typeof errorMessage !== 'undefined') { %>
-<p style="color: red"><%= errorMessage %></p>
-<% } %>
-<style> img { display: none; } </style>
-</div>
+  </form>
+  <% if (typeof errorMessage !== 'undefined') { %>
+  <p style="color: red"><%= errorMessage %></p>
+  <% } %>
+  </div>
