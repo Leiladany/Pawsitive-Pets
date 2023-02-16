@@ -284,9 +284,53 @@ img.nomin2 {
   max-width: 10%;
 }
 
+/*mypets*/
 
+h1.titlemypets {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  color: #6876b8;
+}
 
+h2.petinform {
+  font-size: 20px;
+  text-align: center;
+}
 
+.mypetbox {
+  border: 1px solid rgba(0, 0, 0, 0);
+  width: 500px;
+  position: relative;
+  left: 30%;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  background-color: #6876b8;
+}
+
+.mypetsbtn {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.mypetsbtn2 {
+  padding-bottom: 5px;
+}
+
+.mypetsbtn3 {
+  color: white;
+  border-radius: 10px;
+  border: 2px solid white;
+  background-color: #6876b8;
+}
+
+.mypetsbtn3:hover {
+  color: white;
+  border-radius: 10px;
+  border: 2px solid white;
+  background-color: #6876b8;
+  box-shadow: 0 10px 14px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 
 
 
