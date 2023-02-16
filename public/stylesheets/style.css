@@ -6,6 +6,12 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.section2Text {
+  font-size: 25px;
+  text-align: center;
+  width: 60%;
+}
+
 .navbar {
   background-color: white;
   height: 80px;
