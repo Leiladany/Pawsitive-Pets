@@ -137,16 +137,55 @@ body {
 
 /* Sign up Page and login */
 
+.formsize {
+  position: relative;
+  left: 30%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  bottom: 55px;
+}
+
+.formbgimg {
+  position: relative;
+  background-image: url("../images/signupbg.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 200px;
+}
 
 
 /* Sign up Page */
 
 .formsignup {
+  position: relative;
+  left: 20;
   text-align: center;
+  border-radius: 5px;
+  padding-left: 51px;
+  padding-right: 51px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  width: 60%;
+  background-color: white;
+  box-shadow: 1px 1px 5px;
+  
+}
+
+.input{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
 }
 
 .button2 {
-  top: 50px;
+  top: 10px;
   position:relative;
   font-size: 20px;
   width: 120px;
@@ -168,6 +207,29 @@ body {
   box-shadow: 0 10px 14px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+img.miguel {
+  z-index: 1;
+  position: relative;
+  left: 29%;
+  bottom: 180px;
+  max-width: 10%;
+}
+
+img.nomin {
+  z-index: 1;
+    position: relative;
+    left: 30%;
+    bottom: 507px;
+    max-width: 10%;
+}
+
+img.leila {
+  z-index: 1;
+  position: relative;
+  left: 40%;
+  bottom: 176px;
+  max-width: 6%;
+}
 
 /* Login in Page */
 
