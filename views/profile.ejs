@@ -1,6 +1,13 @@
-<div>
-<h1>Profile</h1>
-<p>Hello <%= user.username %></p>
-<a href="/profile/addpet">Add a Pet</a>
-<a href="/profile/mypets">My Pets</a>
+<div class="profile-container">
+    <h1 class="profile-header">How are you today <%= user.username %>?</h1>
+    <div class="icons">
+        <img src="../images/plus.svg" alt="">
+        <a href="/profile/addpet">Add pet</a>
+    </div>
+
+
+    <div class="icons" >
+        <img src="../images/paw.svg" alt="">
+        <a href="/profile/mypets">My Pets</a>
+    </div>
 </div>
