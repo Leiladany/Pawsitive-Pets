@@ -1,4 +1,6 @@
-<form method="POST" action="/profile/<%= petFound._id %>/edit" enctype="multipart/form-data">
+<div class="addpet-container">
+  <img src="/images/addpet.png" alt="">
+<form class="addpet-form" method="POST" action="/profile/<%= petFound._id %>/edit" enctype="multipart/form-data">
     Pet Name:
     <input type="text" name="petname" value="<%= petFound.petname%>"/>
   </label>
@@ -62,4 +64,7 @@
     <label>
   <button type="submit">Update pet 🐶😺</button>
 </form>
-<a href="/profile/mypets">Go back to My Pets</a>
+<div> 
+  <button><a href="/profile/mypets">Go back to My Pets</a></button>
+</div>
+</div>
