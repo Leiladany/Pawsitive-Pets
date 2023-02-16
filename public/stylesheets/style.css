@@ -105,9 +105,9 @@ body {
 }
 
 /* Image Home Page */
-.imglogo {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+.logonew {
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .dogImg {
