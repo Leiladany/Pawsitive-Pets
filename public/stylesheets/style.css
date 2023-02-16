@@ -11,8 +11,14 @@ body {
   height: 80px;
 }
 
-.navbarText {
+.navText {
+  width: 25px;
+  height: 20px;
+  margin-right: 20px;
+}
 
+.justify-content-center {
+  margin-left: 20%
 }
 
 .navbar-toggler {
@@ -44,6 +50,12 @@ body {
   border-style: none;
   background-color: transparent;
   display: inline;
+  margin-left: 500px;
+}
+
+.logoutPosition {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .form {
@@ -131,7 +143,14 @@ body {
   display: flex;
   justify-content: flex-end;
   margin-top: -220px;
-  margin-right: 100px;
+  margin-right: 120px;
+}
+
+.navImg {
+  width: 80px;
+  height: 70px;
+  margin-top: -40px;
+  margin-left: -19px;
 }
 
 
