@@ -9,31 +9,36 @@ router.get('/login', isLoggedOut, (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-  const body = req.body
+  const { username, password } = req.body;
 
-  const userMatch = await User.find({ username: body.username })
-  // console.log(userMatch)
-  if (userMatch.length) {
-    // User found
-    const user = userMatch[0]
+  try {
+    const user = await User.findOne({ username });
 
-    if (bcrypt.compareSync(body.password, user.passwordHash)) {
-      // Correct password
-
-      const tempUser = {
-        id: user.id,
-        username: user.username,
-        email: user.email,
+    if (user) {
+      // User found
+      if (bcrypt.compareSync(password, user.passwordHash)) {
+        // Correct password
+        const tempUser = {
+          id: user.id,
+          username: user.username,
+          email: user.email,
+        };
+        req.session.user = tempUser;
+        return res.redirect('/profile');
+      } else {
+        // Incorrect password
+        return res.render('auth/login', { errorMessage: 'Incorrect password' });
       }
-      req.session.user = tempUser
-      res.redirect('/profile')
     } else {
-      // Incorrect password
+      // User not found
+      return res.render('auth/login', { errorMessage: 'User not found' });
     }
-  } else {
-    // User not found
+  } catch (error) {
+    // Handle other errors
+    console.error(error);
+    return res.render('auth/login', { errorMessage: 'An error occurred' });
   }
-})
+});
 
 router.post('/logout', (req, res, next) => {
   req.session.destroy(err => {
