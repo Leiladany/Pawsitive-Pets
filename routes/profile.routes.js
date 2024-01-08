@@ -19,26 +19,26 @@ router.get('/', isLoggedIn, (req, res) => {
 
   })
 //create a new pet
-  router.post('/addpet', fileUploader.single('movie-cover-image'), async (req, res, next) => {
-    const body = req.body 
-    console.log(req.file)   
-    const createPet = await Pet.create({
-      owner: req.session.user.id,
-      petname: body.petname,
-      petsort: body.petsort,
-      petbreed: body.petbreed,
-      petbirth: body.petbirth,
-      petsex: body.petsex,
-      petcolor: body.petcolor,
-      pethair: body.pethair,
-      petvaccines: body.petvaccines,
-      petvaccinesdate: body.petvaccinesdate,
-      petpicture: req.file.path
+  router.post('/addpet', fileUploader.single('petpicture'), async (req, res, next) => {
+  const body = req.body;
+  console.log(req.file);
 
-      //missing petpicture
-    })
-    res.redirect('/profile')
-  })
+  const createPet = await Pet.create({
+    owner: req.session.user.id,
+    petname: body.petname,
+    petsort: body.petsort,
+    petbreed: body.petbreed,
+    petbirth: body.petbirth,
+    petgender: body.petgender,  // Assuming there's a field named petgender in your form
+    petcolor: body.petcolor,
+    pethair: body.pethair,
+    petvaccines: body.petvaccines,
+    petvaccinesdate: body.petvaccinesdate,
+    petpicture: req.file.path,
+  });
+
+  res.redirect('/profile');
+});
 
   router.get('/mypets', async (req, res) => {
     try {
