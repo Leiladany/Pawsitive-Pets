@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/User.model');
-const { isLoggedOut, isLoggedIn } = require('../middleware/route-guard');
+const { isLoggedOut } = require('../middleware/route-guard');
 
 router.get("/", (req, res, next) => {
-  res.render("index");
+  res.render("index", { user: req.session.user });
 });
 
 router.get("/signup", isLoggedOut, (req, res) => {
-  res.render("auth/signup");
+  res.render("auth/signup", { user: req.session.user });
 });
 
 router.post('/signup', async (req, res, next) => {

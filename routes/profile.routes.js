@@ -4,28 +4,42 @@ const router = express.Router()
 const Pet = require('../models/Pet.model')
 const User = require('../models/User.model')
 
+
 // require fileUploader in order to use it 
-const fileUploader = require('../config/cloudinary.config');
+const fileUploader = require('../config/cloudinary.config').uploader;
 
 
 router.get('/', isLoggedIn, (req, res) => {
-    res.render('profile', { user: req.session.user })
+  if (req.session.user) {
+    // If signed in, render the 'profile' page
+    res.render('profile', { user: req.session.user });
+  } else {
+    // If not signed in, render a different page (e.g., 'index' or 'home')
+    res.render('index');
+  }
   })
 
 
 
   router.get('/addpet', (req, res) => {
-    res.render('animals/addpet')
+    res.render('animals/addpet', { user: req.session.user })
 
   })
 //create a new pet
-  router.post('/addpet', fileUploader.single('petpicture'), async (req, res, next) => {
-  const body = req.body;
-  console.log(req.file);
+router.post('/addpet', fileUploader.single('petpicture'), async (req, res, next) => {
+  try {
+    if (!req.file) {
+      // If req.file is undefined, log an error and return a response
+      console.error('Error: No file uploaded');
+      return res.status(400).send('No file uploaded');
+    }
 
-  const createPet = await Pet.create({
-    owner: req.session.user.id,
-    petname: body.petname,
+    const body = req.body;
+    console.log(req.file);
+
+    const createPet = await Pet.create({
+      owner: req.session.user.id,
+      petname: body.petname,
     petsort: body.petsort,
     petbreed: body.petbreed,
     petbirth: body.petbirth,
@@ -38,6 +52,11 @@ router.get('/', isLoggedIn, (req, res) => {
   });
 
   res.redirect('/profile');
+  } catch (error) {
+    // Handle any other errors that might occur during the process
+    console.error('Error during file upload:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
   router.get('/mypets', async (req, res) => {
@@ -45,37 +64,52 @@ router.get('/', isLoggedIn, (req, res) => {
       console.log(req.session.user)
       const allPets = await Pet.find({owner: req.session.user.id})
 
-      res.render('animals/mypets', { mypets: allPets })
+      res.render('animals/mypets', { mypets: allPets, user: req.session.user })
     } catch (error) {
       console.log('Route to all pets', error)
     }
   })
 
-  // show 1 pet
   router.get('/:mypetsId/details', async (req, res) => {
-    const petFound = await Pet.findById(req.params.mypetsId)
-    res.render('animals/one', { petFound })
-  })
-
+    try {
+      const petFound = await Pet.findById(req.params.mypetsId);
+      res.render('animals/one', { petFound, user: req.session.user });
+    } catch (error) {
+      console.error('Error fetching pet details:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+  
   //  show pet & edit
   router.get('/:mypetsId/edit', async (req, res) => {
-    const petFound = await Pet.findById(req.params.mypetsId).populate('owner')
-    res.render('animals/updatePet', { petFound })
-  })
-
-  router.post('/:mypetsId/edit', fileUploader.single('movie-cover-image'), async (req, res) => {
-    if (req.file){
-      const newPet = {...req.body,
-      petpicture: req.file.path,
+    try {
+      const petFound = await Pet.findById(req.params.mypetsId).populate('owner');
+      res.render('animals/updatePet', { petFound, user: req.session.user });
+    } catch (error) {
+      console.error('Error fetching pet details for editing:', error);
+      res.status(500).send('Internal Server Error');
     }
-    await Pet.findByIdAndUpdate(req.params.mypetsId, newPet)
-    res.redirect(`/profile/${req.params.mypetsId}/details`)
-    
-    }else{
-    const petFound = await Pet.findByIdAndUpdate(req.params.mypetsId,req.body)
-    res.redirect(`/profile/${req.params.mypetsId}/details`)
+  });
+  
+  router.post('/:mypetsId/edit', fileUploader.single('petpicture'), async (req, res) => {
+    try {
+      if (req.file) {
+        const newPet = {
+          ...req.body,
+          petpicture: req.file.path,
+        };
+  
+        await Pet.findByIdAndUpdate(req.params.mypetsId, newPet);
+        res.redirect(`/profile/${req.params.mypetsId}/details`);
+      } else {
+        const petFound = await Pet.findByIdAndUpdate(req.params.mypetsId, req.body);
+        res.redirect(`/profile/${req.params.mypetsId}/details`);
+      }
+    } catch (error) {
+      console.error('Error updating pet details:', error);
+      res.status(500).send('Internal Server Error');
     }
-  })
+  });
 
 
 

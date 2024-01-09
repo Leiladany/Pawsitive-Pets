@@ -1,12 +1,12 @@
-const express = require('express')
-const bcrypt = require('bcrypt')
-const User = require('../models/User.model')
-const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
-const router = express.Router()
+const express = require('express');
+const bcrypt = require('bcrypt');
+const User = require('../models/User.model');
+const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard');
+const router = express.Router();
 
 router.get('/login', isLoggedOut, (req, res) => {
-  res.render('auth/login')
-})
+  res.render('auth/login', { user: req.session.user });
+});
 
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
@@ -27,16 +27,16 @@ router.post('/login', async (req, res) => {
         return res.redirect('/profile');
       } else {
         // Incorrect password
-        return res.render('auth/login', { errorMessage: 'Incorrect password' });
+        return res.render('auth/login', { errorMessage: 'Incorrect password', user: req.session.user });
       }
     } else {
       // User not found
-      return res.render('auth/login', { errorMessage: 'User not found' });
+      return res.render('auth/login', { errorMessage: 'User not found', user: req.session.user });
     }
   } catch (error) {
     // Handle other errors
     console.error(error);
-    return res.render('auth/login', { errorMessage: 'An error occurred' });
+    return res.render('auth/login', { errorMessage: 'An error occurred', user: req.session.user });
   }
 });
 
@@ -45,5 +45,7 @@ router.post('/logout', (req, res, next) => {
     if (err) next(err);
     res.redirect('/');
   });
+
 });
-module.exports = router
+
+module.exports = router;
