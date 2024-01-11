@@ -49,10 +49,14 @@ body {
 /* Container Styles */
 
 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
-  top: 250px;
+  top: 20px;
   border-radius: 5px;
   padding: 60px;
+  padding-bottom: 0px;
   width: 50%;
   font-size: 50px;
   margin-left: 50px;
@@ -60,15 +64,24 @@ body {
 
 .title {
   display: flex;
+  align-items: center;
+}
+
+.homePageImg {
+  max-width: 100%; /* Adjust as needed */
+  margin-left: 65%; /* Adjust as needed */
+  order: 2; /* Set the order to 2 to move it to the right */
 }
 
 h1 {
+  width: 190%;
   font-size: 2.9rem;
   font-family: sans-serif;
 }
 
 .homePageTitle {
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .signupbutton {
@@ -99,8 +112,7 @@ h1 {
 .section2Text {
   font-family: sans-serif;
   text-align: center;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  padding-bottom: 30px;
 }
 
 /* Section 3 Styles */
@@ -109,7 +121,7 @@ h2 {
   display: flex;
   flex-direction: row-reverse;
   margin-right: 500px;
-  margin-top: -30%;
+  margin-top: -26%;
 }
 
 .section3Text {
@@ -123,7 +135,7 @@ h2 {
 
 .footer {
   justify-content: space-between;
-  margin-top: 65%;
+  margin-top: 50%;
 }
 
 .container2 {
