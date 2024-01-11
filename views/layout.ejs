@@ -55,12 +55,14 @@
               <a class="nav-link" href="/auth/login">Login</a>
             </li>
           <% } %>
+          <% if (user) { %>
+            <span class="logoutPosition">
+              <form id="logout-form" action="/auth/logout" method="POST">
+                <button class="logoutbutton">Logout</button>
+              </form>
+            </span>
+          <% } %>
         </ul>
-        <span class="logoutPosition">
-          <form id="logout-form" action="/auth/logout" method="POST">
-            <button class="logoutbutton">Logout</button>
-          </form>
-        </span>
       </div>
     </div>
   </nav>
@@ -69,37 +71,43 @@
 
   <script>
    document.addEventListener('DOMContentLoaded', function () {
-      const logoutButton = document.querySelector('.logoutbutton');
-  
-      const updateNavbar = (user) => {
-        const profileLink = document.querySelector('.nav-item.profile');
-  
-        if (profileLink && logoutButton) {
-          if (user) {
-            profileLink.style.display = 'block';
-            logoutButton.style.display = 'block';
-          } else {
-            profileLink.style.display = 'none';
-            logoutButton.style.display = 'none';
-          }
+  const logoutForm = document.getElementById('logout-form');
+
+  if (logoutForm) {
+    const logoutButton = logoutForm.querySelector('.logoutbutton');
+
+    const updateNavbar = (user) => {
+      const profileLink = document.querySelector('.nav-item.profile');
+
+      if (profileLink && logoutButton) {
+        if (user) {
+          profileLink.style.display = 'block';
+          logoutButton.style.display = 'block';
+        } else {
+          profileLink.style.display = 'none';
+          logoutButton.style.display = 'none';
         }
-      };
-  
-      const handleAuthenticationChange = () => {
-        updateNavbar(null);
-        localStorage.removeItem('user');
-        console.log('Authentication state changed');
-        window.location.href = '/';
-      };
-  
-      document.getElementById('logout-form').addEventListener('submit', function (event) {
+      }
+    };
+
+    const handleAuthenticationChange = () => {
+      updateNavbar(null);
+      localStorage.removeItem('user');
+      console.log('Authentication state changed');
+      window.location.href = '/';
+    };
+
+    if (logoutForm) {
+      logoutForm.addEventListener('submit', function (event) {
         event.preventDefault();
         console.log('Logout button clicked');
         handleAuthenticationChange();
       });
-  
-      updateNavbar(<%- JSON.stringify(user) %>); // Pass the user information
-    });
+    }
+
+    updateNavbar(<%- JSON.stringify(user) %>); // Pass the user information
+  }
+});
   </script>
   
   <script src="/js/script.js"></script>
