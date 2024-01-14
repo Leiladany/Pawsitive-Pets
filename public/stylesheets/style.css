@@ -211,25 +211,23 @@ h2 {
   margin-top: 10px;
 }
 
-.miguel, .leila, .nomin2 {
+.miguel, .leila, .nomin {
   position: fixed;
-  top: 20%; /* Adjust the top position as needed */
-  left: 10%; /* Adjust the left position as needed */
   z-index: 4; /* Place the images in front of the form */
 }
 
 .miguel {
-  width: 20px;
+  width: 155px;
   height: auto;
-  top: 60%; /* Adjust the top position for the second image */
-  left: 10%; /* Adjust the left position for the second image */
+  top: 66.5%; /* Adjust the top position for the second image */
+  left: 31.6%; /* Adjust the left position for the second image */
 }
 
 .nomin {
-  width: 20px;
+  width: 140px;
   height: auto;
-  top: 40%; /* Adjust the top position for the second image */
-  left: 80%; /* Adjust the left position for the second image */
+  top: 29.7%; /* Adjust the top position for the second image */
+  left: 40%; /* Adjust the left position for the second image */
 }
 
 .leila {
